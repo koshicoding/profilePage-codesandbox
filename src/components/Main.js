@@ -1,14 +1,17 @@
-import Footer from "./Footer";
-import useName from "../hooks/useName";
+import React from "react";
 import ButtonSection from "./ButtonSection";
 
 export default function Main() {
+  const [buttonText, setButtonText] = React.useState("hi");
+
   return (
     <div className="mainWrapper">
-      <h1 className="name">{useName("hi")}</h1>
-      <p className="occupation">Fachinformatiker fuer Anwendungsentwicklung</p>
+      <h1 className="name">{buttonText}</h1>
+      <p className="occupation">
+        'Fachinformatiker fuer Anwendungsentwicklung'
+      </p>
       <p className="link">github.com</p>
-      <ButtonSection></ButtonSection>
+      <ButtonSection handleClick={setButtonText} />
       <div className="about">
         <h1 className="aboutHeader">About</h1>
         <p className="aboutContent">
